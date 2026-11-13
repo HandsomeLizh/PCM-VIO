@@ -1,0 +1,46 @@
+{
+  "protocol_id": "pcm-v3-handoff-v1",
+  "evaluation_seed": 0,
+  "training_seeds_for_new_claims": [0, 1, 2],
+  "image_hw": [256, 512],
+  "seq_len": 11,
+  "max_skip": 0,
+  "bn_recalib": 0,
+  "datasets": {
+    "ground": {
+      "train": ["m2_bridge2", "m2_street1", "m2_switch", "m3_dynamic01", "m3_shaturn01", "m3_wheelfloat01"],
+      "val": ["m2_tree"],
+      "test": ["m2_building2", "m2_street2", "m3_varyingillu01", "m3_occlusion01"],
+      "primary": ["m2_building2", "m2_street2", "m3_varyingillu01"],
+      "stress": ["m3_occlusion01"],
+      "dt": 0.0666667,
+      "segment_lengths_m": [5, 10, 15, 20],
+      "stage1_epochs": 40,
+      "stage2_epochs": 40
+    },
+    "kitti": {
+      "train": ["00", "01", "02", "04", "06", "08"],
+      "val": ["09"],
+      "test": ["05", "07", "10"],
+      "primary": ["05", "07", "10"],
+      "stress": [],
+      "dt": 0.1,
+      "segment_lengths_m": [100, 200, 300, 400, 500, 600, 700, 800],
+      "stage1_epochs": 60,
+      "stage2_epochs": 40
+    }
+  },
+  "estimator_cases": [
+    {"name": "full", "args": ["--policy", "all"], "runs": 1},
+    {"name": "rand0", "args": ["--policy", "random", "--policy_value", "0"], "runs": 1},
+    {"name": "rand10", "args": ["--policy", "random", "--policy_value", "0.1"], "runs": 3},
+    {"name": "rand25", "args": ["--policy", "random", "--policy_value", "0.25"], "runs": 3},
+    {"name": "rand50", "args": ["--policy", "random", "--policy_value", "0.5"], "runs": 3},
+    {"name": "blank", "args": ["--policy", "all", "--test_perturb", "visual", "--perturb_types", "blank", "--perturb_scale", "1", "--p_severe", "0.3"], "runs": 1}
+  ],
+  "policy_cases": [
+    {"name": "learned", "args": ["--policy", "learned", "--decision", "sample"], "runs": 5},
+    {"name": "match25", "args": ["--policy", "learned", "--decision", "threshold", "--match_usage", "25"], "runs": 1},
+    {"name": "interval4", "args": ["--policy", "interval", "--policy_value", "4"], "runs": 1}
+  ]
+}

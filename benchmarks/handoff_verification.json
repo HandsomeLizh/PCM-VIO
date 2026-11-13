@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-13",
+  "unit_and_pipeline_suite": {
+    "passed": 74,
+    "skipped": 1,
+    "skip": "B0 CUDA-only test; suite run with CUDA_VISIBLE_DEVICES empty"
+  },
+  "additional_data_identity_test": "passed; benchmark tests 4/4 after adding identity verification",
+  "real_checkpoint_checks": [
+    "pcm3_g and pcm3_nox_g strict state_dict load",
+    "both checkpoints: finite first-chunk inference on m2_building2",
+    "checkpoint copies SHA256 equal to original"
+  ],
+  "real_full_sequence_reproduction": {
+    "run": "pcm3_g full; four ground test sequences",
+    "max_absolute_metric_difference": 0.0,
+    "primary": {
+      "t_rel": {
+        "mean": 7.132664156471398,
+        "std": 0.0
+      },
+      "r_rel": {
+        "mean": 18.82897044033718,
+        "std": 0.0
+      },
+      "t_rmse": {
+        "mean": 0.007503744938194499,
+        "std": 0.0
+      },
+      "r_rmse": {
+        "mean": 0.09072477019078799,
+        "std": 0.0
+      },
+      "usage": {
+        "mean": 100.0,
+        "std": 0.0
+      }
+    },
+    "source_metrics": "benchmarks/evidence/pcm3_g/full.json"
+  },
+  "model_code": "17 model/training/data/evaluation files byte-identical to the source that produced checkpoints",
+  "scope": "Full estimator matrix was not rerun; six-case historical raw evidence is preserved. Latest full-vision case was rerun."
+}

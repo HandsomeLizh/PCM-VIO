@@ -1,0 +1,66 @@
+{
+ "args": {
+  "ckpt": "results/bmr_g/checkpoints/stage1_last.pth",
+  "data_dir": null,
+  "test_seq": null,
+  "val_seq": null,
+  "gpu": 0,
+  "experiment_name": "bmr_g_blank_last",
+  "policy": "all",
+  "policy_value": null,
+  "decision": "sample",
+  "threshold": 0.5,
+  "match_usage": null,
+  "num_runs": 1,
+  "seed": 0,
+  "bn_recalib": 0,
+  "max_skip": null,
+  "test_perturb": "visual",
+  "perturb_types": [
+   "blank"
+  ],
+  "perturb_scale": 1.0,
+  "p_severe": 0.3,
+  "misalign_samples": 0
+ },
+ "threshold": null,
+ "runs": [
+  {
+   "m2_building2": {
+    "t_rel": 18.239760953251174,
+    "r_rel": 30.086140381984215,
+    "t_rmse": 0.013671007797017161,
+    "r_rmse": 0.049150118581369445,
+    "usage": 100.0
+   },
+   "m2_street2": {
+    "t_rel": 11.168984910879876,
+    "r_rel": 18.944354786025944,
+    "t_rmse": 0.0054996510232932705,
+    "r_rmse": 0.032203392515809955,
+    "usage": 100.0
+   },
+   "m3_varyingillu01": {
+    "t_rel": 12.199169521341489,
+    "r_rel": 10.21489407077272,
+    "t_rmse": 0.014710135277701453,
+    "r_rmse": 0.19478909977657582,
+    "usage": 100.0
+   },
+   "m3_occlusion01": {
+    "t_rel": 19.211358352413708,
+    "r_rel": 10.683726824970647,
+    "t_rmse": 0.016800430317908482,
+    "r_rmse": 0.15964509547893013,
+    "usage": 100.0
+   },
+   "mean": {
+    "t_rel": 15.204818434471562,
+    "r_rel": 17.48227901593838,
+    "t_rmse": 0.012670306103980091,
+    "r_rmse": 0.10894692658817134,
+    "usage": 100.0
+   }
+  }
+ ]
+}

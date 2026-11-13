@@ -1,0 +1,64 @@
+{
+ "args": {
+  "ckpt": "results/pcm3_nox_g/checkpoints/stage1_last.pth",
+  "data_dir": null,
+  "test_seq": null,
+  "val_seq": null,
+  "gpu": 0,
+  "experiment_name": "pcm3_nox_g_rand0_last",
+  "policy": "random",
+  "policy_value": 0.0,
+  "decision": "sample",
+  "threshold": 0.5,
+  "match_usage": null,
+  "num_runs": 1,
+  "seed": 0,
+  "bn_recalib": 0,
+  "max_skip": null,
+  "test_perturb": "none",
+  "perturb_types": null,
+  "perturb_scale": 1.0,
+  "p_severe": 0.3,
+  "misalign_samples": 0
+ },
+ "threshold": null,
+ "runs": [
+  {
+   "m2_building2": {
+    "t_rel": 25.70973637637107,
+    "r_rel": 23.53724459792008,
+    "t_rmse": 0.014667812226101948,
+    "r_rmse": 0.054664917214621904,
+    "usage": 0.06349206087179482
+   },
+   "m2_street2": {
+    "t_rel": 19.269267908795563,
+    "r_rel": 11.161196074244456,
+    "t_rmse": 0.005801734392293188,
+    "r_rmse": 0.03160672921227168,
+    "usage": 0.055096420692279935
+   },
+   "m3_varyingillu01": {
+    "t_rel": 12.854349053479508,
+    "r_rel": 19.78903390855461,
+    "t_rmse": 0.01328242593938493,
+    "r_rmse": 0.19604501812390757,
+    "usage": 0.04334633704274893
+   },
+   "m3_occlusion01": {
+    "t_rel": 19.387370790834538,
+    "r_rel": 18.28017247102618,
+    "t_rmse": 0.015551713020868246,
+    "r_rmse": 0.15847070573311664,
+    "usage": 0.04688232438638806
+   },
+   "mean": {
+    "t_rel": 19.30518103237017,
+    "r_rel": 18.191911762936332,
+    "t_rmse": 0.012325921394662077,
+    "r_rmse": 0.11019684257097945,
+    "usage": 0.05220428574830294
+   }
+  }
+ ]
+}
