@@ -135,7 +135,9 @@ VIO_SEG_LENGTHS=5,10,15,20 python tools/pcm_diag.py \
   --gpu 0 --out results/pcm3_reproduce/diag.json
 
 # 重建训练缓存；测试仍走 PIL 图像读取路径。
-python tools/cache_images.py --data_dir "$GROUND_DATA" --out cache/ground_256x512
+python tools/cache_images.py --data_dir "$GROUND_DATA" --out cache/ground_256x512 \
+  --seqs m2_bridge2 m2_street1 m2_switch m3_dynamic01 m3_shaturn01 m3_wheelfloat01 \
+  --workers 8
 
 # 重新训练完整 v3；复制命令改 seed 为 1、2，消融另外增加 --kappa_x 0。
 DATA_DIR="$GROUND_DATA" IMG_CACHE="$PWD/cache/ground_256x512" \
